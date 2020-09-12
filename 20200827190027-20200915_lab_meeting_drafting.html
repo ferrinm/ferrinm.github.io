@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>20200915 lab meeting drafting</title>
+<meta name="author" content="(Max Ferrin)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">20200915 lab meeting drafting</h1><h2 class="author">Max Ferrin</h2><p class="date">Created: 2020-09-11 Fri 20:34</p>
+</section>
+
+<section>
+<section id="slide-org9904651">
+<h2 id="org9904651">brainstorming</h2>
+<ul>
+<li>just about phase separation model</li>
+<li><a href="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/llps_model_analysis.html">analysis script here</a></li>
+
+</ul>
+</section>
+<section id="slide-org8505c63">
+<h3 id="org8505c63">lab meeting goals</h3>
+<ul>
+<li>make the model understandable to everyone</li>
+<li>see if there are any constraints that would make sense biologically</li>
+
+</ul>
+</section>
+<section id="slide-org7ba1195">
+<h3 id="org7ba1195">motivation</h3>
+<ul>
+<li>based on similarities to proteins in other systems, it seems likely that CME
+proteins can undergo LLPS</li>
+<li>I have plans to experimentally test whether that's true in vitro, but while
+that's going I'm also thinking about the biological advantage</li>
+<li><p>
+two (non-mutually exclusive) potential mechanisms in mind
+</p>
+
+
+<div class="figure">
+<p><img src="../../../quals/proposal/figures/mechanisms.png" alt="mechanisms.png">
+</p>
+<p><span class="figure-number">Figure 1: </span><b>Hypothetical roles of LLPS in CME. a</b>, LLPS could trigger endocytic actin assembly by concentrating NPFs. In an analogous reconstituted system, Li et al. demonstrated that LLPS driven by multivalent interactions between NCK (analogous to Sla1 with 3 SH3 domains), N-WASP (homologous to Las17), and Nephrin can bring N-WASP to the threshold concentration necessary to robustly nucleate actin assembly. Figure adapted from <a class="org-ref-reference" href="#slide-bibliography">[li_phase_2012]</a>. <b>b</b>, Material properties of a liquid droplet at a site of CME could lend mechanical assistance to membrane deformation. Energy contributions from droplet-cytoplasm surface tension and droplet-membrane wetting would drive membrane invagination to reduce the system's free energy. Figure adapted from <a class="org-ref-reference" href="#slide-bibliography">[lacy_molecular_2018]</a>. <div id="mechanisms"></div></p>
+</div></li>
+<li>this project aims to theoretically investigate the second hypothesis</li>
+
+</ul>
+</section>
+<section id="slide-org637aeb7">
+<h3 id="org637aeb7">methods</h3>
+<ul>
+<li>describe the model from the ground up</li>
+
+</ul>
+</section>
+<section id="slide-orgff6fe9c">
+<h3 id="orgff6fe9c">results</h3>
+<ul>
+<li>with/without droplet</li>
+<li>effect of relative surface tension</li>
+<li>adding in turgor pressure</li>
+
+</ul>
+</section>
+<section id="slide-org8e00575">
+<h3 id="org8e00575">conclusions</h3>
+</section>
+<section id="slide-org0a7cd5d">
+<h3 id="org0a7cd5d">future directions</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgf72a14f">
+<h2 id="orgf72a14f">outline</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgc9cd92c">
+<h2 id="orgc9cd92c">test real presentation</h2>
+<div class="outline-text-2" id="text-orgc9cd92c">
+</div>
+</section>
+<section id="slide-orgb2b15d7">
+<h3 id="orgb2b15d7">slide 1</h3>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/areas-vs-H_i_delta.png" alt="areas-vs-H_i_delta.png">
+</p>
+</div>
+</section>
+<section id="slide-org414dc7c">
+<h3 id="org414dc7c">slide 2</h3>
+<p>
+\(F=\sigma\left(S_{0}+S_{m}+S_{i}\right)+\frac{K}{2}
+S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}+\gamma_{d} S_{d}-\gamma_{m}
+S_{m}-\gamma_{i} S_{i}\)
+</p>
+</section>
+<section id="slide-orgf490e43">
+<h3 id="orgf490e43">slide 3</h3>
+<p>
+some regular old text
+</p>
+
+<ul>
+<li>list 1</li>
+<li>list 2</li>
+<li>list 3</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1f7014e">
+<h2 id="org1f7014e">technical presentation details</h2>
+<ul>
+<li>is it time for <a href="20200827190311-org_present.html">org-present</a> or <a href="20200827190508-org_reveal.html">org-reveal</a> or <a href="20200827190610-emacs_reveal.html">emacs-reveal</a>?
+<ul>
+<li>I think I'll go with org-reveal</li>
+
+</ul></li>
+<li>or maybe just a chalk talk?</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown,RevealZoom,RevealNotes],
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+]
+});
+</script>
+</body>
+</html>
