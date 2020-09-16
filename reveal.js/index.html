@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Mechanical role of a protein droplet in endocytosis</title>
+<meta name="author" content="(Max Ferrin)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./dist/reveal.css"/>
+
+<link rel="stylesheet" href="./dist/theme/simple.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Mechanical role of a protein droplet in endocytosis</h1><h2 class="author">Max Ferrin</h2><p class="date">Created: 2020-09-16 Wed 14:23</p>
+</section>
+<section id="table-of-contents"><div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgda10487">Acknowledgements</a></li>
+<li><a href="#/slide-org0a0b592">Lab meeting goals</a></li>
+<li><a href="#/slide-org8711dc0">Background/motivation</a></li>
+<li><a href="#/slide-org36277ba">Model walk-through</a></li>
+<li><a href="#/slide-org6d5f6ee">Some preliminary parameter explorations</a></li>
+<li><a href="#/slide-orgda177dc">Future directions</a></li>
+<li><a href="#/slide-org23a5ea9">References</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-orgda10487">
+<h2 id="orgda10487">Acknowledgements</h2>
+
+<div class="figure">
+<p><img src="brainstorming/2020-09-14_16-42-44_csm_FJ2015_fcd72b8c19.png" alt="2020-09-14_16-42-44_csm_FJ2015_fcd72b8c19.png" width="20%" align="left">
+</p>
+</div>
+
+<div class="figure">
+<p><img src="brainstorming/2020-09-14_16-43-53_tyler.jpeg" alt="2020-09-14_16-43-53_tyler.jpeg" width="20%" align="right">
+</p>
+</div>
+
+<div class="figure">
+<p><img src="Mechanical_role_of_a_protein_droplet_in_endocytosis/2020-09-14_18-05-16_screenshot.png" alt="2020-09-14_18-05-16_screenshot.png" width="45%">
+</p>
+</div>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-center">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-right">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Frank Jülicher</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-center">The Barnes/Drubin Lab</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">Tyler Harmon</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org0a0b592">
+<h2 id="org0a0b592">Lab meeting goals</h2>
+<ul>
+<li>make the model understandable to everyone</li>
+<li>get feedback on whether the model constraints make biological sense</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org8711dc0">
+<h2 id="org8711dc0">Background/motivation</h2>
+<div class="outline-text-2" id="text-org8711dc0">
+</div>
+</section>
+<section id="slide-org00a1d43">
+<h3 id="org00a1d43">Src homology 3 (SH3) domains and proline-rich motifs (PRMs) are enriched in CME</h3>
+<ul>
+<li>~40-fold enrichment of SH3 domains in CME proteins</li>
+<li>29 out of ~60 CME proteins participate in SH3-PRM interactome</li>
+<li>Multiple SH3 or PRM per protein</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="Mechanical_role_of_a_protein_droplet_in_endocytosis/2020-09-14_17-09-35_Screen Shot 2019-11-23 at 9.12.04 PM.png" alt="2020-09-14_17-09-35_Screen Shot 2019-11-23 at 9.12.04 PM.png" width="50%" align="center">
+</p>
+</div>
+
+<p>
+<a class="org-ref-reference" href="#slide-bibliography">[tonikian_bayesian_2009]</a>
+</p>
+
+</section>
+<section id="slide-org7088cf0">
+<h3 id="org7088cf0">Multivalent SH3-PRM proteins undergo liquid-liquid phase separation (LLPS)</h3>
+
+<div class="figure">
+<p><img src="Mechanical_role_of_a_protein_droplet_in_endocytosis/2020-09-14_17-27-19_Screen_Shot_2019-11-23_at_12.45.11_AM.png" alt="2020-09-14_17-27-19_Screen_Shot_2019-11-23_at_12.45.11_AM.png" width="50%" align="center">
+</p>
+</div>
+
+<p>
+<a class="org-ref-reference" href="#slide-bibliography">[li_phase_2012]</a>
+</p>
+
+<p>
+<b>Hypothesis: CME proteins can undergo LLPS</b>
+</p>
+</section>
+<section id="slide-org5003b7c">
+<h3 id="org5003b7c">Hypothetical roles of LLPS in CME</h3>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Trigger actin assembly</td>
+<td class="org-left">Mechanical work</td>
+</tr>
+</tbody>
+</table>
+
+<div class="figure">
+<p><img src="../../../quals/proposal/figures/mechanisms.png" alt="mechanisms.png" width="70%">
+</p>
+</div>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a class="org-ref-reference" href="#slide-bibliography">[li_phase_2012]</a></td>
+<td class="org-left"><a class="org-ref-reference" href="#slide-bibliography">[lacy_molecular_2018]</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org9b1e91b">
+<h3 id="org9b1e91b">Evidence for LLPS-mediated membrane bending</h3>
+<p width="45%">
+<img src="brainstorming/2020-09-14_15-17-48_Screen Shot 2020-09-14 at 3.17.18 PM.png" alt="2020-09-14_15-17-48_Screen Shot 2020-09-14 at 3.17.18 PM.png" width="45%">
+<a class="org-ref-reference" href="#slide-bibliography">[yuan_membrane_2020]</a>
+</p>
+
+<p width="60%">
+<img src="Mechanical_role_of_a_protein_droplet_in_endocytosis/2020-09-14_19-12-33_Screen Shot 2020-09-14 at 7.12.03 PM.png" alt="2020-09-14_19-12-33_Screen Shot 2020-09-14 at 7.12.03 PM.png" width="60%">
+<a class="org-ref-reference" href="#slide-bibliography">[bergeron-sandoval_endocytosis_2017]</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org36277ba">
+<h2 id="org36277ba">Model walk-through</h2>
+<div class="outline-text-2" id="text-org36277ba">
+</div>
+</section>
+<section id="slide-org373f7ee">
+<h3 id="org373f7ee">Full model</h3>
+<aside class="notes">
+<ul>
+<li>draw out cartoon as I explain!</li>
+<li>circle and label different components
+<ul>
+<li>point out x-axis will be invagination distance</li>
+
+</ul></li>
+<li>just define geometry terms and talk about geometry constraints for now, I will
+get into the energy terms later</li>
+
+</ul>
+
+</aside>
+
+<p>
+\(F=\sigma\left(S_{0}+S_{m}+S_{i}\right)+\frac{K}{2}
+S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}+\gamma_{d} S_{d}-\gamma_{m}
+S_{m}-\gamma_{i} S_{i}+P V_{i}\)
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Side view</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Top view</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="figure">
+<p><img src="Mechanical_role_of_a_protein_droplet_in_endocytosis/2020-09-14_21-51-44_Screen Shot 2020-09-14 at 9.51.18 PM.png" alt="2020-09-14_21-51-44_Screen Shot 2020-09-14 at 9.51.18 PM.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org3129fca">
+<h3 id="org3129fca">Energy contributions from membrane alone</h3>
+<p>
+membrane tension
+</p>
+
+<p>
+\(\sigma\left(S_{0}+S_{m}+S_{i}\right)\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/membrane_tension-vs-H_i_delta.png" alt="membrane_tension-vs-H_i_delta.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org3129fca-split">
+
+<h3>Energy contributions from membrane alone</h3>
+<p>
+bending energy
+</p>
+
+<p>
+\(\frac{K}{2} S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/bending_energy-vs-H_i_delta.png" alt="bending_energy-vs-H_i_delta.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org3129fca-split">
+
+<h3>Energy contributions from membrane alone</h3>
+<p>
+combined membrane tension and bending energy
+</p>
+
+<p>
+\(F=\sigma\left(S_{0}+S_{m}+S_{i}\right)+\frac{K}{2} S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}\)
+</p>
+
+<div class="figure">
+<p><img src="./.ob-jupyter/2f0a89afa35c2ec1639783c138aac9e1ff55e622.png" alt="2f0a89afa35c2ec1639783c138aac9e1ff55e622.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org1ee1aad">
+<h3 id="org1ee1aad">Energy contributions from droplet + membrane</h3>
+<p>
+surface tension
+</p>
+
+<p>
+\(\gamma_{d} S_{d}\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/surface_tension-vs-H_i_delta.png" alt="surface_tension-vs-H_i_delta.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org1ee1aad-split">
+
+<h3>Energy contributions from droplet + membrane</h3>
+<p>
+wetting energy (note: negative contribution!)
+</p>
+
+<p>
+\(\gamma_{m} S_{m}+\gamma_{i} S_{i}\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/wetting_energy-vs-H_i_delta.png" alt="wetting_energy-vs-H_i_delta.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org1ee1aad-split">
+
+<h3>Energy contributions from droplet + membrane</h3>
+<p>
+combined surface tension and wetting energy
+</p>
+
+<p>
+\(F=\gamma_{d} S_{d}-\gamma_{m} S_{m}-\gamma_{i} S_{i}\)
+</p>
+
+<div class="figure">
+<p><img src="./.ob-jupyter/8b6b2ac1fc9176b417e4fa09e70da40063d4bf19.png" alt="8b6b2ac1fc9176b417e4fa09e70da40063d4bf19.png">
+</p>
+</div>
+
+</section>
+<section id="slide-org251a820">
+<h3 id="org251a820">Energy contributions from turgor pressure</h3>
+<p>
+\(P V_{i}\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/turgor_pressure-vs-H_i_delta.png" alt="turgor_pressure-vs-H_i_delta.png">
+</p>
+</div>
+
+</section>
+<section id="slide-orgcee6b4e">
+<h3 id="orgcee6b4e">All contributions together</h3>
+<p>
+\(F=\sigma\left(S_{0}+S_{m}+S_{i}\right)+\frac{K}{2}
+S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}+\gamma_{d} S_{d}-\gamma_{m}
+S_{m}-\gamma_{i} S_{i}+P V_{i}\)
+</p>
+
+
+<div class="figure">
+<p><img src="./.ob-jupyter/06d57f2b9fbf86e7714ceda05948256443b676af.png" alt="06d57f2b9fbf86e7714ceda05948256443b676af.png">
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6d5f6ee">
+<h2 id="org6d5f6ee">Some preliminary parameter explorations</h2>
+<div class="outline-text-2" id="text-org6d5f6ee">
+</div>
+</section>
+<section id="slide-org2594428">
+<h3 id="org2594428">Changes in surface areas explain driving force</h3>
+<aside class="notes">
+<p>
+the color scheme is wrong here
+</p>
+
+</aside>
+<p>
+\(F=\sigma\left(S_{0}+S_{m}+S_{i}\right)+\frac{K}{2}
+S_{i}\left(\frac{2}{R_{i}}-C_{i}\right)^{2}+\gamma_{d} S_{d}-\gamma_{m}
+S_{m}-\gamma_{i} S_{i}+P V_{i}\)
+</p>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/areas-vs-H_i_delta.png" alt="areas-vs-H_i_delta.png">
+</p>
+</div>
+</section>
+<section id="slide-orga6f2fc7">
+<h3 id="orga6f2fc7">Changes in surface area drive internalization through wetting energy and surface tension</h3>
+<aside class="notes">
+<p>
+this is totally dominated by surface tension
+</p>
+
+</aside>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_gamma_m_0.png" alt="f_scan_gamma_m_0.png">
+</p>
+</div>
+
+</section>
+<section id="slide-orga6f2fc7-split">
+
+<h3>Changes in surface area drive internalization through wetting energy and surface tension</h3>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_gamma_m_100.png" alt="f_scan_gamma_m_100.png">
+</p>
+</div>
+
+</section>
+<section id="slide-orga6f2fc7-split">
+
+<h3>Changes in surface area drive internalization through wetting energy and surface tension</h3>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_gamma_m_180.png" alt="f_scan_gamma_m_180.png">
+</p>
+</div>
+</section>
+<section id="slide-orgf076c3c">
+<h3 id="orgf076c3c">Relative strength of wetting energy vs. surface tension sets driving force</h3>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_gamma_m_180.png" alt="f_scan_gamma_m_180.png" width="70%">
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_gamma_m_delta.png" alt="f_scan_gamma_m_delta.png" width="40%">
+</p>
+</div>
+</section>
+<section id="slide-org84c0405">
+<h3 id="org84c0405">Droplet cannot overcome very high turgor pressure</h3>
+
+<div class="figure">
+<p><img src="file:///Volumes/GoogleDrive/My Drive/grad_school/db_lab/code/analysis/llps_endocytosis_modeling/figures/f_scan_turgor_delta.png" alt="f_scan_turgor_delta.png">
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgda177dc">
+<h2 id="orgda177dc">Future directions</h2>
+<ul>
+<li>Devise solution for when droplet is smaller than invagination</li>
+<li>Implement more sophisticated membrane geometry model with continuous curvature</li>
+<li>Gain a deeper understanding of why the model works: build more intuitive plots
+to get a sense of which parameters are most sensitive</li>
+<li>Any inspiration for experimental design?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org23a5ea9">
+<h2 id="org23a5ea9">References</h2>
+<ul class='org-ref-bib'><li><a id="bergeron-sandoval_endocytosis_2017">[bergeron-sandoval_endocytosis_2017]</a> <a name="bergeron-sandoval_endocytosis_2017"></a> <a href="">Bergeron-Sandoval, Heris, Hendricks, Ehrlicher, Francois, Pappu & Michnick, Endocytosis Caused by Liquid-Liquid Phase Separation of Proteins, <i>bioRxiv</i>,  145664 (2017)</a>.</li>
+<li><a id="lacy_molecular_2018">[lacy_molecular_2018]</a> <a name="lacy_molecular_2018"></a> <a href="">Lacy, Ma, Ravindra & Berro, Molecular Mechanisms of Force Production in Clathrin-Mediated Endocytosis, <i>FEBS Letters</i>, <b>592(21)</b>, 3586-3605 (2018)</a>.</li>
+<li><a id="li_phase_2012">[li_phase_2012]</a> <a name="li_phase_2012"></a> <a href="">Li, Banjade, Cheng, Kim, Chen, Guo, Llaguno, Hollingsworth, King, Banani, Russo, Jiang, Nixon & Rosen, Phase Transitions in the Assembly of Multivalent Signalling Proteins, <i>Nature</i>, <b>483(7389)</b>, 336-340 (2012)</a>.</li>
+<li><a id="tonikian_bayesian_2009">[tonikian_bayesian_2009]</a> <a name="tonikian_bayesian_2009"></a> <a href="">Tonikian, Xin, Toret, Gfeller, Landgraf, Panni, Paoluzi, Castagnoli, Currell, Seshagiri, Yu, Winsor, Vidal, Gerstein, Bader, Volkmer, Cesareni, Drubin, Kim, Sidhu & Boone, Bayesian Modeling of the Yeast SH3 Domain Interactome Predicts Spatiotemporal Dynamics of Endocytosis Proteins, <i>PLoS Biology</i>, <b>7(10)</b>, (2009)</a>.</li>
+<li><a id="yuan_membrane_2020">[yuan_membrane_2020]</a> <a name="yuan_membrane_2020"></a> <a href="">Yuan, Alimohamadi, Bakka, Trementozzi, Fawzi, Rangamani & Stachowiak, Membrane Bending by Protein Phase Separation, <i>bioRxiv</i>,  2020.05.21.109751 (2020)</a>.</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./dist/reveal.js"></script>
+<script src="./plugin/markdown/markdown.js"></script>
+<script src="./plugin/zoom/zoom.js"></script>
+<script src="./plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown,RevealZoom,RevealNotes],
+slideNumber:true,
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+]
+});
+</script>
+</body>
+</html>
