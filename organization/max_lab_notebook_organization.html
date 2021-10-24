@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-10-24 Sun 15:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Max's lab notebook organization</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Max Ferrin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Max's lab notebook organization</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge3beb59">template/description</a>
+<ul>
+<li><a href="#org6425a1c">Project 1: <i>project title</i></a>
+<ul>
+<li><a href="#org4eb1892">Relevant literature</a></li>
+<li><a href="#org140af38">Brainstorming</a></li>
+<li><a href="#orga6325a0">Experiment 1.1: <i>experiment title</i></a>
+<ul>
+<li><a href="#org0e11856">Aims</a></li>
+<li><a href="#orgd1b9f7d">Trial 1.1.1: <i>trial title</i></a></li>
+<li><a href="#orgb7752b5">Trial 1.1.2: <i>trial title</i></a></li>
+</ul>
+</li>
+<li><a href="#orgc103658">Experiment 1.2: <i>experiment title</i></a>
+<ul>
+<li><a href="#orgef42951">Aims</a></li>
+<li><a href="#orgc481c2a">Trial 1.2.1: <i>trial title</i></a></li>
+<li><a href="#orgc6773aa">Trial 1.2.2: <i>trial title</i></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org33e54b2">Project 2: <i>project title</i></a>
+<ul>
+<li><a href="#org581ed73">Relevant literature</a></li>
+<li><a href="#org1ad2699">Brainstorming</a></li>
+<li><a href="#orgac27e7f">Experiment 2.1: <i>experiment title</i></a>
+<ul>
+<li><a href="#org7ec1cb0">Aims</a></li>
+<li><a href="#org6d660bc">Trial 2.1.1: <i>trial title</i></a></li>
+<li><a href="#orgeadedaf">Trial 2.1.2: <i>trial title</i></a></li>
+</ul>
+</li>
+<li><a href="#orgd49425c">Experiment 2.2: <i>experiment title</i></a>
+<ul>
+<li><a href="#org40b8236">Aims</a></li>
+<li><a href="#org2ff9a12">Trial 2.2.1: <i>trial title</i></a></li>
+<li><a href="#org0c1cf36">Trial 2.2.2: <i>trial title</i></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgdf06799">graphical depiction</a></li>
+<li><a href="#org30cdf1e">Bibliography</a>
+<ul>
+<li><a href="#lu_clathrin-mediated_2016">Lu, Rebecca and Drubin, David G. and Sun, Yidi - Clathrin-Mediated Endocytosis in Budding Yeast at a Glance</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge3beb59" class="outline-2">
+<h2 id="orge3beb59">template/description</h2>
+<div class="outline-text-2" id="text-orge3beb59">
+<p>
+I use Emacs Org-Mode to write everything for my lab notebook (including this
+page)! Catch the wave! This organization is just for my experimental work; I
+still use emacs but with a different organizational structure for programmatical
+theory and analysis.
+</p>
+</div>
+<div id="outline-container-org6425a1c" class="outline-3">
+<h3 id="org6425a1c">Project 1: <i>project title</i></h3>
+<div class="outline-text-3" id="text-org6425a1c">
+<p>
+Project title should briefly convey the broad question of the project
+</p>
+</div>
+<div id="outline-container-org4eb1892" class="outline-4">
+<h4 id="org4eb1892">Relevant literature</h4>
+<div class="outline-text-4" id="text-org4eb1892">
+<p>
+This is a place to take notes from scientific literature (with references
+<a href="#lu_clathrin-mediated_2016">lu_clathrin-mediated_2016</a>!) for information that informs experimental
+design and/or might go into the manuscript for the project
+</p>
+</div>
+</div>
+
+<div id="outline-container-org140af38" class="outline-4">
+<h4 id="org140af38">Brainstorming</h4>
+<div class="outline-text-4" id="text-org140af38">
+<p>
+Put under-developed ideas for future experiments here so they don't get buried
+and forgotten elsewhere
+</p>
+</div>
+</div>
+<div id="outline-container-orga6325a0" class="outline-4">
+<h4 id="orga6325a0">Experiment 1.1: <i>experiment title</i></h4>
+<div class="outline-text-4" id="text-orga6325a0">
+<p>
+Experiment title should briefly convey the specific question that the experiment
+is designed to address
+</p>
+</div>
+<div id="outline-container-org0e11856" class="outline-5">
+<h5 id="org0e11856">Aims</h5>
+<div class="outline-text-5" id="text-org0e11856">
+<p>
+A few bullet points to further expand on the experiment title:
+</p>
+
+<ul class="org-ul">
+<li>What do you hope to answer? How will you try to answer it?
+<ul class="org-ul">
+<li>If there are multiple questions, ask yourself whether it makes more sense to
+split them into separate experiments</li>
+</ul></li>
+<li>Why are you asking the experimental question?</li>
+<li>How will you interpret potential results?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1b9f7d" class="outline-5">
+<h5 id="orgd1b9f7d">Trial 1.1.1: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-orgd1b9f7d">
+<p>
+The trial title should state whether it is a repeat or slightly tweaked
+procedure for optimization (include what the tweak is if that's the case). If
+the trial is designed to ask a different question than other trials, it should
+be a new experiment instead.
+</p>
+</div>
+<div id="outline-container-orgf658d37" class="outline-6">
+<h6 id="orgf658d37">procedure</h6>
+<div class="outline-text-6" id="text-orgf658d37">
+</div>
+<div id="outline-container-org684f032" class="outline-7">
+<h7 id="org684f032">one task</h7>
+<div class="outline-text-7" id="text-org684f032">
+<ol class="org-ol">
+<li>Write up a complete numbered protocol before starting anything at the bench</li>
+<li>Include preparing specialized reagents</li>
+<li>If there is a commonly used task required, write up a separate protocol for
+it (if one doesn't already exist), upload it to the lab protocols database,
+copy it into the trial procedure, and link to its location in the database</li>
+<li><p>
+Include a descriptive table when samples will be generated, complete with
+unique identifiers corresponding to the project (first number), experiment
+(second number), trial (third number), sample type abbreviation (letter), and
+the specific sample of that type for the trial (last number)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org8c2fd63">1.1.1P1</a></td>
+<td class="org-left">project 1, experiment 1, trial 1, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org02fe430">1.1.1P2</a></td>
+<td class="org-left">project 1, experiment 1, trial 1, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Sample IDs should be written as radio target links when they're first
+described, so that all future times they're written out will link back to
+the place where they were defined: <a href="#org8c2fd63">1.1.1P1</a></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2a8bc5d" class="outline-7">
+<h7 id="org2a8bc5d">another task</h7>
+<div class="outline-text-7" id="text-org2a8bc5d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="orgbc478d4">1.1.1D1</a></td>
+<td class="org-left">project 1, experiment 1, trial 1, first <span class="underline">digest</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="orga9a0ce4">1.1.1D2</a></td>
+<td class="org-left">project 1, experiment 1, trial 1, second <span class="underline">digest</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org7213234" class="outline-6">
+<h6 id="org7213234">notes</h6>
+<div class="outline-text-6" id="text-org7213234">
+</div>
+<div id="outline-container-org5e68b70" class="outline-7">
+<h7 id="org5e68b70">one task</h7>
+<div class="outline-text-7" id="text-org5e68b70">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2019-06-21 Fri 15:25]  </span></span>  The notes section should have the same headlines and
+steps as the procedure to serve as a checklist, complete with timestamps
+<ul class="org-ul">
+<li>if anything not exactly according to the protocol happened, make a note
+about it here under the appropriate step</li>
+</ul></li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2019-06-21 Fri 15:34]  </span></span>  make sure to note when samples, like <a href="#org8c2fd63">1.1.1P1</a>, were
+generated and where they were stored</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2f80a00" class="outline-7">
+<h7 id="org2f80a00">another task</h7>
+</div>
+</div>
+<div id="outline-container-org0783ad1" class="outline-6">
+<h6 id="org0783ad1">results</h6>
+<div class="outline-text-6" id="text-org0783ad1">
+<p>
+This section will vary widely depending on the type of experiment, but always
+label everything!!! Do not make any interpretations here. If there are multiple
+samples with data, each should get their own headline in this section.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc769218" class="outline-6">
+<h6 id="orgc769218">interpretaions/conclusions</h6>
+<div class="outline-text-6" id="text-orgc769218">
+<p>
+What does the data say about the specific experimental question and the broad
+project question? How/why?
+</p>
+</div>
+</div>
+<div id="outline-container-orgef109df" class="outline-6">
+<h6 id="orgef109df">next steps</h6>
+<div class="outline-text-6" id="text-orgef109df">
+<p>
+Are there any other experiments that the results suggest should be done?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb7752b5" class="outline-5">
+<h5 id="orgb7752b5">Trial 1.1.2: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-orgb7752b5">
+</div>
+<div id="outline-container-org082b937" class="outline-6">
+<h6 id="org082b937">procedure</h6>
+<div class="outline-text-6" id="text-org082b937">
+</div>
+<div id="outline-container-orgadd2b4a" class="outline-7">
+<h7 id="orgadd2b4a">one task</h7>
+<div class="outline-text-7" id="text-orgadd2b4a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org5990d7f">1.1.2P1</a></td>
+<td class="org-left">project 1, experiment 1, trial 2, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org2105e2e">1.1.2P2</a></td>
+<td class="org-left">project 1, experiment 1, trial 2, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgb954b8a" class="outline-7">
+<h7 id="orgb954b8a">another task</h7>
+</div>
+</div>
+<div id="outline-container-orgc1250c1" class="outline-6">
+<h6 id="orgc1250c1">notes</h6>
+<div class="outline-text-6" id="text-orgc1250c1">
+</div>
+<div id="outline-container-org5aed2ac" class="outline-7">
+<h7 id="org5aed2ac">one task</h7>
+</div>
+<div id="outline-container-org739126d" class="outline-7">
+<h7 id="org739126d">another task</h7>
+</div>
+</div>
+<div id="outline-container-org104fcde" class="outline-6">
+<h6 id="org104fcde">results</h6>
+</div>
+<div id="outline-container-org93fd5fb" class="outline-6">
+<h6 id="org93fd5fb">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orgd9157b1" class="outline-6">
+<h6 id="orgd9157b1">next steps</h6>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc103658" class="outline-4">
+<h4 id="orgc103658">Experiment 1.2: <i>experiment title</i></h4>
+<div class="outline-text-4" id="text-orgc103658">
+</div>
+<div id="outline-container-orgef42951" class="outline-5">
+<h5 id="orgef42951">Aims</h5>
+</div>
+<div id="outline-container-orgc481c2a" class="outline-5">
+<h5 id="orgc481c2a">Trial 1.2.1: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-orgc481c2a">
+</div>
+<div id="outline-container-orge45c307" class="outline-6">
+<h6 id="orge45c307">procedure</h6>
+<div class="outline-text-6" id="text-orge45c307">
+</div>
+<div id="outline-container-org29a2e07" class="outline-7">
+<h7 id="org29a2e07">one task</h7>
+<div class="outline-text-7" id="text-org29a2e07">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org23aab59">1.2.1P1</a></td>
+<td class="org-left">project 1, experiment 2, trial 1, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org4a3e42b">1.2.1P2</a></td>
+<td class="org-left">project 1, experiment 2, trial 1, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org3cad544" class="outline-7">
+<h7 id="org3cad544">another task</h7>
+</div>
+</div>
+<div id="outline-container-orgca38005" class="outline-6">
+<h6 id="orgca38005">notes</h6>
+<div class="outline-text-6" id="text-orgca38005">
+</div>
+<div id="outline-container-org5890acd" class="outline-7">
+<h7 id="org5890acd">one task</h7>
+</div>
+<div id="outline-container-org2c68662" class="outline-7">
+<h7 id="org2c68662">another task</h7>
+</div>
+</div>
+<div id="outline-container-orgac2ced9" class="outline-6">
+<h6 id="orgac2ced9">results</h6>
+</div>
+<div id="outline-container-org30e2e2a" class="outline-6">
+<h6 id="org30e2e2a">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orgc176889" class="outline-6">
+<h6 id="orgc176889">next steps</h6>
+</div>
+</div>
+<div id="outline-container-orgc6773aa" class="outline-5">
+<h5 id="orgc6773aa">Trial 1.2.2: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-orgc6773aa">
+</div>
+<div id="outline-container-orge9a1ae3" class="outline-6">
+<h6 id="orge9a1ae3">procedure</h6>
+<div class="outline-text-6" id="text-orge9a1ae3">
+</div>
+<div id="outline-container-org048ef6f" class="outline-7">
+<h7 id="org048ef6f">one task</h7>
+<div class="outline-text-7" id="text-org048ef6f">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="orgcebfcc2">1.2.2P1</a></td>
+<td class="org-left">project 1, experiment 2, trial 2, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org1139f24">1.2.2P2</a></td>
+<td class="org-left">project 1, experiment 2, trial 2, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgf72614c" class="outline-7">
+<h7 id="orgf72614c">another task</h7>
+</div>
+</div>
+<div id="outline-container-org1ea1cd4" class="outline-6">
+<h6 id="org1ea1cd4">notes</h6>
+<div class="outline-text-6" id="text-org1ea1cd4">
+</div>
+<div id="outline-container-org6076143" class="outline-7">
+<h7 id="org6076143">one task</h7>
+</div>
+<div id="outline-container-org4347e81" class="outline-7">
+<h7 id="org4347e81">another task</h7>
+</div>
+</div>
+<div id="outline-container-org153a0b3" class="outline-6">
+<h6 id="org153a0b3">results</h6>
+</div>
+<div id="outline-container-org86a1c05" class="outline-6">
+<h6 id="org86a1c05">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orga767066" class="outline-6">
+<h6 id="orga767066">next steps</h6>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org33e54b2" class="outline-3">
+<h3 id="org33e54b2">Project 2: <i>project title</i></h3>
+<div class="outline-text-3" id="text-org33e54b2">
+</div>
+<div id="outline-container-org581ed73" class="outline-4">
+<h4 id="org581ed73">Relevant literature</h4>
+</div>
+<div id="outline-container-org1ad2699" class="outline-4">
+<h4 id="org1ad2699">Brainstorming</h4>
+</div>
+<div id="outline-container-orgac27e7f" class="outline-4">
+<h4 id="orgac27e7f">Experiment 2.1: <i>experiment title</i></h4>
+<div class="outline-text-4" id="text-orgac27e7f">
+</div>
+<div id="outline-container-org7ec1cb0" class="outline-5">
+<h5 id="org7ec1cb0">Aims</h5>
+</div>
+<div id="outline-container-org6d660bc" class="outline-5">
+<h5 id="org6d660bc">Trial 2.1.1: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-org6d660bc">
+</div>
+<div id="outline-container-org357a46b" class="outline-6">
+<h6 id="org357a46b">procedure</h6>
+<div class="outline-text-6" id="text-org357a46b">
+</div>
+<div id="outline-container-org0a36ece" class="outline-7">
+<h7 id="org0a36ece">one task</h7>
+<div class="outline-text-7" id="text-org0a36ece">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org0e777de">2.1.1P1</a></td>
+<td class="org-left">project 2, experiment 1, trial 1, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org30e81b9">2.1.1P2</a></td>
+<td class="org-left">project 2, experiment 1, trial 1, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5245253" class="outline-7">
+<h7 id="org5245253">another task</h7>
+</div>
+</div>
+<div id="outline-container-orgb248e6f" class="outline-6">
+<h6 id="orgb248e6f">notes</h6>
+<div class="outline-text-6" id="text-orgb248e6f">
+</div>
+<div id="outline-container-orga0f0a0e" class="outline-7">
+<h7 id="orga0f0a0e">one task</h7>
+</div>
+<div id="outline-container-orgd796b76" class="outline-7">
+<h7 id="orgd796b76">another task</h7>
+</div>
+</div>
+<div id="outline-container-org35404e8" class="outline-6">
+<h6 id="org35404e8">results</h6>
+</div>
+<div id="outline-container-orgcf27a6d" class="outline-6">
+<h6 id="orgcf27a6d">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-org448066b" class="outline-6">
+<h6 id="org448066b">next steps</h6>
+</div>
+</div>
+<div id="outline-container-orgeadedaf" class="outline-5">
+<h5 id="orgeadedaf">Trial 2.1.2: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-orgeadedaf">
+</div>
+<div id="outline-container-org90a0cee" class="outline-6">
+<h6 id="org90a0cee">procedure</h6>
+<div class="outline-text-6" id="text-org90a0cee">
+</div>
+<div id="outline-container-org1f29b0a" class="outline-7">
+<h7 id="org1f29b0a">one task</h7>
+<div class="outline-text-7" id="text-org1f29b0a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="orgeb21908">2.1.2P1</a></td>
+<td class="org-left">project 2, experiment 1, trial 2, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="org07ecf67">2.1.2P2</a></td>
+<td class="org-left">project 2, experiment 1, trial 2, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgb730bca" class="outline-7">
+<h7 id="orgb730bca">another task</h7>
+</div>
+</div>
+<div id="outline-container-org0e24065" class="outline-6">
+<h6 id="org0e24065">notes</h6>
+<div class="outline-text-6" id="text-org0e24065">
+</div>
+<div id="outline-container-org37a7355" class="outline-7">
+<h7 id="org37a7355">one task</h7>
+</div>
+<div id="outline-container-orga1becf4" class="outline-7">
+<h7 id="orga1becf4">another task</h7>
+</div>
+</div>
+<div id="outline-container-org2e51a77" class="outline-6">
+<h6 id="org2e51a77">results</h6>
+</div>
+<div id="outline-container-org1e13aa2" class="outline-6">
+<h6 id="org1e13aa2">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orgcbe4b82" class="outline-6">
+<h6 id="orgcbe4b82">next steps</h6>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd49425c" class="outline-4">
+<h4 id="orgd49425c">Experiment 2.2: <i>experiment title</i></h4>
+<div class="outline-text-4" id="text-orgd49425c">
+</div>
+<div id="outline-container-org40b8236" class="outline-5">
+<h5 id="org40b8236">Aims</h5>
+</div>
+<div id="outline-container-org2ff9a12" class="outline-5">
+<h5 id="org2ff9a12">Trial 2.2.1: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-org2ff9a12">
+</div>
+<div id="outline-container-orgd5157f3" class="outline-6">
+<h6 id="orgd5157f3">procedure</h6>
+<div class="outline-text-6" id="text-orgd5157f3">
+</div>
+<div id="outline-container-org7152bce" class="outline-7">
+<h7 id="org7152bce">one task</h7>
+<div class="outline-text-7" id="text-org7152bce">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org82f8d8a">2.2.1P1</a></td>
+<td class="org-left">project 2, experiment 2, trial 1, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="orga425809">2.2.1P2</a></td>
+<td class="org-left">project 2, experiment 2, trial 1, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc169903" class="outline-7">
+<h7 id="orgc169903">another task</h7>
+</div>
+</div>
+<div id="outline-container-org3e60951" class="outline-6">
+<h6 id="org3e60951">notes</h6>
+<div class="outline-text-6" id="text-org3e60951">
+</div>
+<div id="outline-container-orgd57421c" class="outline-7">
+<h7 id="orgd57421c">one task</h7>
+</div>
+<div id="outline-container-org5fd3f26" class="outline-7">
+<h7 id="org5fd3f26">another task</h7>
+</div>
+</div>
+<div id="outline-container-orga613a87" class="outline-6">
+<h6 id="orga613a87">results</h6>
+</div>
+<div id="outline-container-org19d3b79" class="outline-6">
+<h6 id="org19d3b79">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orgfd293ba" class="outline-6">
+<h6 id="orgfd293ba">next steps</h6>
+</div>
+</div>
+<div id="outline-container-org0c1cf36" class="outline-5">
+<h5 id="org0c1cf36">Trial 2.2.2: <i>trial title</i></h5>
+<div class="outline-text-5" id="text-org0c1cf36">
+</div>
+<div id="outline-container-orgd3ec5fc" class="outline-6">
+<h6 id="orgd3ec5fc">procedure</h6>
+<div class="outline-text-6" id="text-orgd3ec5fc">
+</div>
+<div id="outline-container-orgd68e579" class="outline-7">
+<h7 id="orgd68e579">one task</h7>
+<div class="outline-text-7" id="text-orgd68e579">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sample ID</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a id="org9d8a1c6">2.2.2P1</a></td>
+<td class="org-left">project 2, experiment 2, trial 2, first <span class="underline">PCR</span> sample</td>
+</tr>
+
+<tr>
+<td class="org-left"><a id="orgb322054">2.2.2P2</a></td>
+<td class="org-left">project 2, experiment 2, trial 2, second <span class="underline">PCR</span> sample</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org6945e5b" class="outline-7">
+<h7 id="org6945e5b">another task</h7>
+</div>
+</div>
+<div id="outline-container-org748ec13" class="outline-6">
+<h6 id="org748ec13">notes</h6>
+<div class="outline-text-6" id="text-org748ec13">
+</div>
+<div id="outline-container-orgb40b773" class="outline-7">
+<h7 id="orgb40b773">one task</h7>
+</div>
+<div id="outline-container-org1dd9dee" class="outline-7">
+<h7 id="org1dd9dee">another task</h7>
+</div>
+</div>
+<div id="outline-container-orgebc5fff" class="outline-6">
+<h6 id="orgebc5fff">results</h6>
+</div>
+<div id="outline-container-org1753cb5" class="outline-6">
+<h6 id="org1753cb5">interpretaions/conclusions</h6>
+</div>
+<div id="outline-container-orgfb4b103" class="outline-6">
+<h6 id="orgfb4b103">next steps</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf06799" class="outline-2">
+<h2 id="orgdf06799">graphical depiction</h2>
+<div class="outline-text-2" id="text-orgdf06799">
+
+<div id="org5b892c7" class="figure">
+<p><img src="notebook_organization.png" alt="notebook_organization.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org30cdf1e" class="outline-2">
+<h2 id="org30cdf1e">Bibliography</h2>
+<div class="outline-text-2" id="text-org30cdf1e">
+</div>
+<div id="outline-container-lu_clathrin-mediated_2016" class="outline-3">
+<h3 id="lu_clathrin-mediated_2016">Lu, Rebecca and Drubin, David G. and Sun, Yidi - Clathrin-Mediated Endocytosis in Budding Yeast at a Glance</h3>
+<div class="outline-text-3" id="text-lu_clathrin-mediated_2016">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: \today</p>
+<p class="author">Author: Max Ferrin</p>
+<p class="email">Email: <a href="mailto:ferrinm@berkeley.edu">ferrinm@berkeley.edu</a></p>
+<p class="date">Created: 2021-10-24 Sun 15:23</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
