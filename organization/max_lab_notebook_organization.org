@@ -6,6 +6,9 @@
 #+DATE: \today
 #+AUTHOR: Max Ferrin
 #+EMAIL: ferrinm@berkeley.edu
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil toc:4 todo:t pri:nil tags:nil ^:nil <:t author:t email:t f:t H:6 p:t timestamp:t broken-links:mark
+
 * template/description
 
 I use Emacs Org-Mode to write everything for my lab notebook (including this
@@ -224,3 +227,4 @@ Are there any other experiments that the results suggest should be done?
    :NUMBER: {8}
    :PMID: {27084361}
   :END:
+  
