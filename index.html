@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2022-02-01 Tue 13:44 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-01 Tue&gt; </span></span> David biweekly meeting</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Max Ferrin">
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<!-- 2022-02-15 Tue 12:08 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lt;2022-02-15 Tue&gt; David biweekly meeting</title>
+<meta name="author" content="Max Ferrin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -29,8 +29,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,21 +40,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,7 +190,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -197,56 +197,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
-<h1 class="title"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-01 Tue&gt; </span></span> David biweekly meeting</h1>
-</header><nav id="table-of-contents">
+<h1 class="title"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-15 Tue&gt; </span></span> David biweekly meeting</h1>
+</header><nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb1227cc">projects</a>
+<li><a href="#org762a68a">projects</a>
 <ul>
-<li><a href="#org5a9e403">Project 4: Reconstitution of endocytic actin network</a>
+<li><a href="#orgb2bfc94">Project 4: Reconstitution of endocytic actin network</a>
 <ul>
-<li><a href="#orgf6e097f">recent progress</a></li>
-<li><a href="#orgf01a599">next steps</a></li>
+<li><a href="#orgc395d48">recent progress</a></li>
+<li><a href="#org9fbb1ce">next steps</a></li>
 </ul>
 </li>
-<li><a href="#orgec612ac">Project 5: Experimental role of phase-separated protein droplet in endocytosis</a>
+<li><a href="#org12f1a77">Project 5: Experimental role of phase-separated protein droplet in endocytosis</a>
 <ul>
-<li><a href="#org17108ce">recent progress</a></li>
+<li><a href="#org432bffb">recent progress</a></li>
+<li><a href="#orgc9f3ba3">next steps</a></li>
 </ul>
 </li>
-<li><a href="#orga989013">Project 7: Mechanical regulation of CME by protein LLPS</a>
+<li><a href="#orgdaaa9c0">Project 7: Mechanical regulation of CME by protein LLPS</a>
 <ul>
-<li><a href="#org288f50b">recent progress</a></li>
-<li><a href="#org926c841">next steps</a>
+<li><a href="#orgb4e4c3a">recent progress</a></li>
+<li><a href="#org69a7413">next steps</a>
 <ul>
-<li><a href="#orgf334a96">short-term</a></li>
+<li><a href="#org06ef680">short-term</a></li>
 </ul>
 </li>
 </ul>
@@ -256,108 +235,100 @@
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgb1227cc" class="outline-2">
-<h2 id="orgb1227cc">projects</h2>
-<div class="outline-text-2" id="text-orgb1227cc">
+<div id="outline-container-org762a68a" class="outline-2">
+<h2 id="org762a68a">projects</h2>
+<div class="outline-text-2" id="text-org762a68a">
 </div>
-<div id="outline-container-org5a9e403" class="outline-3">
-<h3 id="org5a9e403">Project 4: Reconstitution of endocytic actin network</h3>
-<div class="outline-text-3" id="text-org5a9e403">
+<div id="outline-container-orgb2bfc94" class="outline-3">
+<h3 id="orgb2bfc94">Project 4: Reconstitution of endocytic actin network</h3>
+<div class="outline-text-3" id="text-orgb2bfc94">
 </div>
-<div id="outline-container-orgf6e097f" class="outline-4">
-<h4 id="orgf6e097f">recent progress</h4>
-<div class="outline-text-4" id="text-orgf6e097f">
+<div id="outline-container-orgc395d48" class="outline-4">
+<h4 id="orgc395d48">recent progress</h4>
+<div class="outline-text-4" id="text-orgc395d48">
 <ul class="org-ul">
-<li>on the same day, fluorescence microscopy for CLEM plan B and plan C came
-online
+<li>collected technical triplicate fluorescence data for 4 conditions:
+<ol class="org-ol">
+<li>- Las17, - LatA, Sac6-GFP extract</li>
+<li>+ Las17, - LatA, Sac6-GFP extract</li>
+<li>+ Las17, + LatA, Sac6-GFP extract</li>
+<li>- Las17, - LatA, extract buffer only</li>
+</ol></li>
+<li>embedded 1 replicate each in resin for EM
 <ul class="org-ul">
-<li>trained on alternative microscope that will work, albeit more slowly
-(Optimus Prime)</li>
-<li>received a different lipid dye</li>
+<li><a href="https://docs.google.com/presentation/d/193r8VhVzVaTDvQH3iKdRVth2-4f9ebT1Tst8Xt7IehQ/edit#slide=id.gfa7e21a065_0_0">annotated ROIs slides</a> that I sent to Danielle for sectioning</li>
+<li>the remaining replicates are sitting in fixative; I can process these once
+we look at the already processed ones by TEM</li>
 </ul></li>
-<li>the different lipid dye (ATTO 565) is slightly less hydrophilic than the
-original dye (ATTO 647), so I decided to continue using the original dye on
-the alternative microscope for my current replicate data</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf01a599" class="outline-4">
-<h4 id="orgf01a599">next steps</h4>
-<div class="outline-text-4" id="text-orgf01a599">
+<div id="outline-container-org9fbb1ce" class="outline-4">
+<h4 id="org9fbb1ce">next steps</h4>
+<div class="outline-text-4" id="text-org9fbb1ce">
 <ul class="org-ul">
-<li>image negative control beads for correlation</li>
-<li>write results, figure caption, and methods section for CLEM in manuscript</li>
+<li>TEM of current round of samples when Danielle is done with sectioning</li>
+<li>design figure for CLEM data
+<ul class="org-ul">
+<li>should it just be the TEM image in the main figure, or should I show the
+fluorescence data as well?</li>
+</ul></li>
 <li>determine whether there is a difference in membrane shape between high and low
 fluorescence beads
 <ul class="org-ul">
 <li>come up with some metric of scoring if so</li>
 </ul></li>
-<li>if there are differences, collect triplicate data and do statistical test</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgec612ac" class="outline-3">
-<h3 id="orgec612ac">Project 5: Experimental role of phase-separated protein droplet in endocytosis</h3>
-<div class="outline-text-3" id="text-orgec612ac">
-<ul class="org-ul">
-<li>Mina is contributing to this for her rotation</li>
-<li>brief overview of our original plan for the rotation:
-<ol class="org-ol">
-<li>clone Eps15 expression construct in E. coli</li>
-<li>purify Eps15 according to published procedure</li>
-<li>fluorescently label Eps15</li>
-<li>perform positive control in vitro Eps15 droplet experiments
-<ol class="org-ol">
-<li>time lapses for fusion and relaxing</li>
-<li>FRAP</li>
-<li>tether to SLBs or GUVs</li>
-</ol></li>
-<li>express/purify Ede1 in S. cerevisiae and E. coli in parallel to see which
-approach is more amenable to purification</li>
-<li>repeat in vitro droplet experiments with Ede1</li>
-<li>start discussions regarding the degree of evolutionary conservation of early
-CME proteins having the capacity to form liquid droplets</li>
-</ol></li>
-</ul>
+<div id="outline-container-org12f1a77" class="outline-3">
+<h3 id="org12f1a77">Project 5: Experimental role of phase-separated protein droplet in endocytosis</h3>
+<div class="outline-text-3" id="text-org12f1a77">
 </div>
-<div id="outline-container-org17108ce" class="outline-4">
-<h4 id="org17108ce">recent progress</h4>
-<div class="outline-text-4" id="text-org17108ce">
+<div id="outline-container-org432bffb" class="outline-4">
+<h4 id="org432bffb">recent progress</h4>
+<div class="outline-text-4" id="text-org432bffb">
 <ul class="org-ul">
-<li>finished cloning Eps15 expression construct on same day that we got the same
-plasmid shipped from Stachowiak lab</li>
-<li>did Eps15 test expression, should get results today</li>
-<li>starting large-scale Eps15 expression for purification
+<li>completed His6-Eps15 and His6-Ede1 test expressions in E. coli
 <ul class="org-ul">
-<li>trying out "LOBSTR" E. coli strain, which supposedly makes His tag affinity
-purification easier</li>
+<li>both seem to very weakly express following the protocol published in the
+Eps15 phase separation paper (~24 hour induction at 12°C)</li>
 </ul></li>
-<li>setting up simultaneous Ede1 overexpression in E. coli, but delayed because
-apparently my competent cells are rather incompetent</li>
+<li>harvested 1 L cell pellets for Eps15 and Ede1 induction ready to be lysed and
+purified</li>
+<li>starting first FPLC run today!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc9f3ba3" class="outline-4">
+<h4 id="orgc9f3ba3">next steps</h4>
+<div class="outline-text-4" id="text-orgc9f3ba3">
+<ul class="org-ul">
+<li>determine whether eps15 and ede1 Ni column purifications worked</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orga989013" class="outline-3">
-<h3 id="orga989013">Project 7: Mechanical regulation of CME by protein LLPS</h3>
-<div class="outline-text-3" id="text-orga989013">
+<div id="outline-container-orgdaaa9c0" class="outline-3">
+<h3 id="orgdaaa9c0">Project 7: Mechanical regulation of CME by protein LLPS</h3>
+<div class="outline-text-3" id="text-orgdaaa9c0">
 </div>
-<div id="outline-container-org288f50b" class="outline-4">
-<h4 id="org288f50b">recent progress</h4>
-<div class="outline-text-4" id="text-org288f50b">
+<div id="outline-container-orgb4e4c3a" class="outline-4">
+<h4 id="orgb4e4c3a">recent progress</h4>
+<div class="outline-text-4" id="text-orgb4e4c3a">
 <ul class="org-ul">
 <li>working out math for modeling clathrin coat; no new simulations to show today</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org926c841" class="outline-4">
-<h4 id="org926c841">next steps</h4>
-<div class="outline-text-4" id="text-org926c841">
+<div id="outline-container-org69a7413" class="outline-4">
+<h4 id="org69a7413">next steps</h4>
+<div class="outline-text-4" id="text-org69a7413">
 </div>
-<div id="outline-container-orgf334a96" class="outline-5">
-<h5 id="orgf334a96">short-term</h5>
-<div class="outline-text-5" id="text-orgf334a96">
+<div id="outline-container-org06ef680" class="outline-5">
+<h5 id="org06ef680">short-term</h5>
+<div class="outline-text-5" id="text-org06ef680">
 <ul class="org-ul">
 <li>correctly add clathrin coat to model</li>
 <li>add droplet to model</li>
@@ -372,7 +343,7 @@ apparently my competent cells are rather incompetent</li>
 <p class="date">Date: \today</p>
 <p class="author">Author: Max Ferrin</p>
 <p class="email">Email: <a href="mailto:ferrinm@berkeley.edu">ferrinm@berkeley.edu</a></p>
-<p class="date">Created: 2022-02-01 Tue 13:44</p>
+<p class="date">Created: 2022-02-15 Tue 12:08</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
