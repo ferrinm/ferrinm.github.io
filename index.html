@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2022-04-12 Tue 14:11 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lt;2022-04-12 Tue&gt; David biweekly meeting</title>
+<meta name="author" content="Max Ferrin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<header>
+<h1 class="title"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-12 Tue&gt; </span></span> David biweekly meeting</h1>
+</header><nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgde3ea2d">projects</a>
+<ul>
+<li><a href="#org4820882">Project 4: Reconstitution of endocytic actin network</a>
+<ul>
+<li><a href="#org83ccb47">recent progress</a>
+<ul>
+<li><a href="#orgf9c1f8d">EM</a></li>
+<li><a href="#org25a24f4">time lapse fluorescence imaging</a></li>
+</ul>
+</li>
+<li><a href="#orgcec918b">next steps</a></li>
+</ul>
+</li>
+<li><a href="#org060e95a">Project 5: Experimental role of phase-separated protein droplet in endocytosis</a>
+<ul>
+<li><a href="#org97375b6">recent progress</a></li>
+<li><a href="#orgbeb3374">next steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-orgde3ea2d" class="outline-2">
+<h2 id="orgde3ea2d">projects</h2>
+<div class="outline-text-2" id="text-orgde3ea2d">
+</div>
+<div id="outline-container-org4820882" class="outline-3">
+<h3 id="org4820882">Project 4: Reconstitution of endocytic actin network</h3>
+<div class="outline-text-3" id="text-org4820882">
+</div>
+<div id="outline-container-org83ccb47" class="outline-4">
+<h4 id="org83ccb47">recent progress</h4>
+<div class="outline-text-4" id="text-org83ccb47">
+</div>
+<div id="outline-container-orgf9c1f8d" class="outline-5">
+<h5 id="orgf9c1f8d">EM</h5>
+<div class="outline-text-5" id="text-orgf9c1f8d">
+<ul class="org-ul">
+<li>While correlating -Las17 beads between fluorescence and EM has not worked very
+well, Danielle found new regions in previously prepared samples that probably
+have beads by directly scanning the resin-embedded samples in dissecting scope
+<ul class="org-ul">
+<li>she was on vacation last week, but will do the sectioning this week so I
+will start imaging as soon as that's done</li>
+</ul></li>
+<li>previous example from my data (<a href="https://docs.google.com/presentation/d/16fdHAqsWkS3JDyFBHewp4lEyRZXOu4Qf8ws7WnXGd2Y/edit#slide=id.gf1c92daf81_0_0">source</a>)
+<ul class="org-ul">
+<li><p>
+pre-embedding fluorescence and bright field
+</p>
+
+
+<figure id="org79c5665">
+<img src="Meetings/2022-04-12_13-06-07_screenshot.png" alt="2022-04-12_13-06-07_screenshot.png">
+
+</figure></li>
+
+<li><p>
+post-embedding bright field
+</p>
+
+
+<figure id="org621a135">
+<img src="Meetings/2022-04-12_13-06-46_screenshot.png" alt="2022-04-12_13-06-46_screenshot.png">
+
+</figure></li>
+</ul></li>
+<li><p>
+images taken by Danielle to be sectioned (<a href="https://docs.google.com/presentation/d/193r8VhVzVaTDvQH3iKdRVth2-4f9ebT1Tst8Xt7IehQ/edit#slide=id.g120cc0c91ac_1_0">source</a>)
+</p>
+
+
+<figure id="orgbdc3a10">
+<img src="Meetings/2022-04-12_13-08-08_screenshot.png" alt="2022-04-12_13-08-08_screenshot.png">
+
+</figure>
+
+
+<figure id="org72d3326">
+<img src="Meetings/2022-04-12_13-08-24_screenshot.png" alt="2022-04-12_13-08-24_screenshot.png">
+
+</figure></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org25a24f4" class="outline-5">
+<h5 id="org25a24f4">time lapse fluorescence imaging</h5>
+<div class="outline-text-5" id="text-org25a24f4">
+<ul class="org-ul">
+<li>purpose: to follow up on membrane tubulation visible in +Las17 +LatA beads by
+EM</li>
+<li>did not observe vesiculation events in any condition by quick overview of
+these maximum projection movies, but currently working out technical side of
+visualizing the 3D data in more detail (airyscan data is much larger than the
+Wall-E data I was used to visualizing)</li>
+<li><p>
+-Las17 -LatA
+</p>
+
+<p>
+<iframe src="https://drive.google.com/file/d/1-I7tUagphb43zfIn-RLU_6-bm0mu5kqD/preview" width="640" height="480"></iframe>
+</p></li>
+<li><p>
++Las17 -LatA
+</p>
+
+<p>
+<iframe src="https://drive.google.com/file/d/1pYgv5mji6kBaIV4KOk8Xht6WJh0nRpgz/preview" width="640" height="480"></iframe>
+</p>
+
+<p>
+<iframe src="https://drive.google.com/file/d/1Ray9JVf2_boCx4-CsMkKfKPesvzyKPrp/preview" width="640" height="480"></iframe>
+</p></li>
+
+<li><p>
++Las17 +LatA
+</p>
+
+<p>
+<iframe src="https://drive.google.com/file/d/1kO_zcukehhXDXGkQGQV4JRW-tJNroB4t/preview" width="640" height="480"></iframe>
+</p>
+
+<p>
+<iframe src="https://drive.google.com/file/d/1AynRE-O7fAcJ5qKps_vQ7MFJ0auTRzqA/preview" width="640" height="480"></iframe>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcec918b" class="outline-4">
+<h4 id="orgcec918b">next steps</h4>
+<div class="outline-text-4" id="text-orgcec918b">
+<ul class="org-ul">
+<li>collect 3 replicates of time lapse data while lipids are still good
+<ul class="org-ul">
+<li>change order of imaging different conditions?</li>
+<li>in-depth 3D visualization after data is collected</li>
+</ul></li>
+<li>EM imaging of -Las17 bead samples when sectioning is done</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org060e95a" class="outline-3">
+<h3 id="org060e95a">Project 5: Experimental role of phase-separated protein droplet in endocytosis</h3>
+<div class="outline-text-3" id="text-org060e95a">
+</div>
+<div id="outline-container-org97375b6" class="outline-4">
+<h4 id="org97375b6">recent progress</h4>
+<div class="outline-text-4" id="text-org97375b6">
+<ul class="org-ul">
+<li>imaged cytoplasmic extract from strain that forms Ede1 condensates
+<ul class="org-ul">
+<li>observed homogenous Ede1-GFP distribution in both crude thawed yeast powder
+and clarified cytoplasmic extract</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbeb3374" class="outline-4">
+<h4 id="orgbeb3374">next steps</h4>
+<div class="outline-text-4" id="text-orgbeb3374">
+<ul class="org-ul">
+<li>return to focusing on protein purification</li>
+<li>characterize physical properties of purified protein, yeast extract, and/or in
+vivo ede1 condensates to inform parameters of my model</li>
+<li>email/set up a meeting with the Stachowiak lab technician to get more detailed
+advice and expression data for Eps15 once I've tried it myself</li>
+<li>collaborate with Yidi on analysis of her in vivo condensate data
+<ul class="org-ul">
+<li>she is mainly focusing on how the early condensate can assemble and then
+disassemble as the membrane starts to bend, whereas I'm focused on the
+mechanical impact of the condensate on the plasma membrane</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: \today</p>
+<p class="author">Author: Max Ferrin</p>
+<p class="email">Email: <a href="mailto:ferrinm@berkeley.edu">ferrinm@berkeley.edu</a></p>
+<p class="date">Created: 2022-04-12 Tue 14:11</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
