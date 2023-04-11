@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2023-04-11 Tue 13:16 -->
+<!-- 2023-04-11 Tue 13:58 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lt;2023-04-11 Tue&gt; David biweekly meeting</title>
@@ -206,40 +206,44 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org06d7170">Mechanical role of Type I myosin in CME theory project</a>
+<li><a href="#org5229671">Mechanical role of Type I myosin in CME theory project</a>
 <ul>
-<li><a href="#org7425a3a">conceptual</a>
+<li><a href="#org1f2c853">conceptual</a>
 <ul>
-<li><a href="#org197aa52">organization of story</a>
+<li><a href="#org59e66d2">brainstorming organization of story</a>
 <ul>
-<li><a href="#orgb74abca">background and motivation</a></li>
-<li><a href="#org1a32681">question</a></li>
-<li><a href="#org11e1140">results</a>
+<li>
 <ul>
-<li><a href="#org2a46341">construction and calibration of type I myosin in cytosim model</a></li>
-<li><a href="#orgb61bdc7">myosin properties that recapitulate yeast CME experiments</a></li>
-<li><a href="#orgac44761">predictions of myosin properties that would be optimal for mammalian CME</a></li>
-<li><a href="#org78f3d3c">predictions of myosin properties that allow for robustness to different resistive loads</a></li>
-<li><a href="#org3c8182e">what explains differences in optimal myosin?</a></li>
+<li><a href="#org5aff2bc">background and motivation</a></li>
+<li><a href="#org4193e7e">question</a></li>
+<li><a href="#orgffa27f3">results</a>
+<ul>
+<li><a href="#org9e23306">construction and calibration of type I myosin in cytosim model</a></li>
+<li><a href="#org8d5eb38">myosin properties that recapitulate yeast CME experiments</a></li>
+<li><a href="#org687a90a">predictions of myosin properties that would be optimal for mammalian CME</a></li>
+<li><a href="#org67916c6">predictions of myosin properties that allow for robustness to different resistive loads</a></li>
+<li><a href="#org80822c8">what explains differences in optimal myosin?</a></li>
 </ul>
 </li>
-<li><a href="#org279614b">conclusions</a></li>
+<li><a href="#org26f3f70">conclusions</a></li>
 </ul>
 </li>
-<li><a href="#orgb0f5fdb">model parameters to constrain, not focus of story</a></li>
-<li><a href="#org95c7468">model parameters to manipulate, focus of story</a></li>
 </ul>
 </li>
-<li><a href="#orgb907362">technical</a></li>
+<li><a href="#orgdfb8bee">model parameters to constrain, not focus of story</a></li>
+<li><a href="#org1e82894">model parameters to manipulate, focus of story</a></li>
 </ul>
 </li>
-<li><a href="#orgb6f0d77">miscellaneous</a></li>
+<li><a href="#orgee55c07">technical</a></li>
+</ul>
+</li>
+<li><a href="#orgc0ebfaf">miscellaneous</a></li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org06d7170" class="outline-2">
-<h2 id="org06d7170">Mechanical role of Type I myosin in CME theory project</h2>
-<div class="outline-text-2" id="text-org06d7170">
+<div id="outline-container-org5229671" class="outline-2">
+<h2 id="org5229671">Mechanical role of Type I myosin in CME theory project</h2>
+<div class="outline-text-2" id="text-org5229671">
 <ul class="org-ul">
 <li>thinking about the conceptual side and technical side of the project in
 parallel, though they are related</li>
@@ -247,9 +251,9 @@ parallel, though they are related</li>
 things in detail, but we have been emailing frequently already</li>
 </ul>
 </div>
-<div id="outline-container-org7425a3a" class="outline-3">
-<h3 id="org7425a3a">conceptual</h3>
-<div class="outline-text-3" id="text-org7425a3a">
+<div id="outline-container-org1f2c853" class="outline-3">
+<h3 id="org1f2c853">conceptual</h3>
+<div class="outline-text-3" id="text-org1f2c853">
 <ul class="org-ul">
 <li>taking a moment to assess what questions are worth answering in the time frame
 I have</li>
@@ -258,13 +262,13 @@ numerous questions that could be addressed; I need to constrain the scope of
 the project before deciding which analyses are worth the time to perform</li>
 </ul>
 </div>
-<div id="outline-container-org197aa52" class="outline-4">
-<h4 id="org197aa52">organization of story</h4>
-<div class="outline-text-4" id="text-org197aa52">
+<div id="outline-container-org59e66d2" class="outline-4">
+<h4 id="org59e66d2">brainstorming organization of story</h4>
+<div class="outline-text-4" id="text-org59e66d2">
 </div>
-<div id="outline-container-orgb74abca" class="outline-5">
-<h5 id="orgb74abca">background and motivation</h5>
-<div class="outline-text-5" id="text-orgb74abca">
+<div id="outline-container-org5aff2bc" class="outline-6">
+<h6 id="org5aff2bc">background and motivation</h6>
+<div class="outline-text-6" id="text-org5aff2bc">
 <ul class="org-ul">
 <li>experimental measurements show wide variety of biophysical parameters among
 type 1 myosins
@@ -281,9 +285,9 @@ mammallian endocytic myosin has similar properties</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a32681" class="outline-5">
-<h5 id="org1a32681">question</h5>
-<div class="outline-text-5" id="text-org1a32681">
+<div id="outline-container-org4193e7e" class="outline-6">
+<h6 id="org4193e7e">question</h6>
+<div class="outline-text-6" id="text-org4193e7e">
 <ul class="org-ul">
 <li>more broad: what biophysical parameters of myosin are most important for CME robustness?</li>
 <li>more specific: what is the mechanistic role of myo-actin force sensitivity in CME?</li>
@@ -292,13 +296,13 @@ myosin to be based on what works best in simulations</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org11e1140" class="outline-5">
-<h5 id="org11e1140">results</h5>
-<div class="outline-text-5" id="text-org11e1140">
+<div id="outline-container-orgffa27f3" class="outline-6">
+<h6 id="orgffa27f3">results</h6>
+<div class="outline-text-6" id="text-orgffa27f3">
 </div>
-<div id="outline-container-org2a46341" class="outline-6">
-<h6 id="org2a46341">construction and calibration of type I myosin in cytosim model</h6>
-<div class="outline-text-6" id="text-org2a46341">
+<div id="outline-container-org9e23306" class="outline-7">
+<h7 id="org9e23306">construction and calibration of type I myosin in cytosim model</h7>
+<div class="outline-text-7" id="text-org9e23306">
 <ul class="org-ul">
 <li>manipulated source code so that model actin-binding motor cannot take a second
 step before unbinding actin, thus generating a single-headed myosin</li>
@@ -316,29 +320,29 @@ step before unbinding actin, thus generating a single-headed myosin</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb61bdc7" class="outline-6">
-<h6 id="orgb61bdc7">myosin properties that recapitulate yeast CME experiments</h6>
-<div class="outline-text-6" id="text-orgb61bdc7">
+<div id="outline-container-org8d5eb38" class="outline-7">
+<h7 id="org8d5eb38">myosin properties that recapitulate yeast CME experiments</h7>
+<div class="outline-text-7" id="text-org8d5eb38">
 <ul class="org-ul">
 <li>internalization velocity vs. myosin copy number</li>
 <li>phase diagram of unbinding rate vs. unbinding force</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgac44761" class="outline-6">
-<h6 id="orgac44761">predictions of myosin properties that would be optimal for mammalian CME</h6>
-<div class="outline-text-6" id="text-orgac44761">
+<div id="outline-container-org687a90a" class="outline-7">
+<h7 id="org687a90a">predictions of myosin properties that would be optimal for mammalian CME</h7>
+<div class="outline-text-7" id="text-org687a90a">
 <ul class="org-ul">
 <li>how does the phase diagram shift in yeast vs. mammalian model</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org78f3d3c" class="outline-6">
-<h6 id="org78f3d3c">predictions of myosin properties that allow for robustness to different resistive loads</h6>
+<div id="outline-container-org67916c6" class="outline-7">
+<h7 id="org67916c6">predictions of myosin properties that allow for robustness to different resistive loads</h7>
 </div>
-<div id="outline-container-org3c8182e" class="outline-6">
-<h6 id="org3c8182e">what explains differences in optimal myosin?</h6>
-<div class="outline-text-6" id="text-org3c8182e">
+<div id="outline-container-org80822c8" class="outline-7">
+<h7 id="org80822c8">what explains differences in optimal myosin?</h7>
+<div class="outline-text-7" id="text-org80822c8">
 <ul class="org-ul">
 <li>actin network organization and reorganization?</li>
 <li>actin polymerization rates?</li>
@@ -346,18 +350,18 @@ step before unbinding actin, thus generating a single-headed myosin</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org279614b" class="outline-5">
-<h5 id="org279614b">conclusions</h5>
-<div class="outline-text-5" id="text-org279614b">
+<div id="outline-container-org26f3f70" class="outline-6">
+<h6 id="org26f3f70">conclusions</h6>
+<div class="outline-text-6" id="text-org26f3f70">
 <p>
 TBD
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb0f5fdb" class="outline-4">
-<h4 id="orgb0f5fdb">model parameters to constrain, not focus of story</h4>
-<div class="outline-text-4" id="text-orgb0f5fdb">
+<div id="outline-container-orgdfb8bee" class="outline-4">
+<h4 id="orgdfb8bee">model parameters to constrain, not focus of story</h4>
+<div class="outline-text-4" id="text-orgdfb8bee">
 <ul class="org-ul">
 <li><a href="file:///home/maxferrin/rclone_google_drive/grad_school/db_lab/code/savio/simulations/20190923_exp6.1/20190923_exp6.1.1_myosins.cym.tpl#MissingReference">viscosity</a></li>
 <li><a href="file:///home/maxferrin/rclone_google_drive/grad_school/db_lab/code/savio/simulations/20190923_exp6.1/20190923_exp6.1.1_myosins.cym.tpl#MissingReference">steric</a></li>
@@ -396,9 +400,9 @@ TBD
 </ul>
 </div>
 </div>
-<div id="outline-container-org95c7468" class="outline-4">
-<h4 id="org95c7468">model parameters to manipulate, focus of story</h4>
-<div class="outline-text-4" id="text-org95c7468">
+<div id="outline-container-org1e82894" class="outline-4">
+<h4 id="org1e82894">model parameters to manipulate, focus of story</h4>
+<div class="outline-text-4" id="text-org1e82894">
 <ul class="org-ul">
 <li>myosin properties
 <ul class="org-ul">
@@ -425,9 +429,9 @@ TBD
 </div>
 </div>
 </div>
-<div id="outline-container-orgb907362" class="outline-3">
-<h3 id="orgb907362">technical</h3>
-<div class="outline-text-3" id="text-orgb907362">
+<div id="outline-container-orgee55c07" class="outline-3">
+<h3 id="orgee55c07">technical</h3>
+<div class="outline-text-3" id="text-orgee55c07">
 <ul class="org-ul">
 <li>trying to make sure I have all the "baseline" simulation setup decided on so I
 don't have to waste time repeating all the simulations again later
@@ -472,9 +476,9 @@ still work</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb6f0d77" class="outline-2">
-<h2 id="orgb6f0d77">miscellaneous</h2>
-<div class="outline-text-2" id="text-orgb6f0d77">
+<div id="outline-container-orgc0ebfaf" class="outline-2">
+<h2 id="orgc0ebfaf">miscellaneous</h2>
+<div class="outline-text-2" id="text-orgc0ebfaf">
 <ul class="org-ul">
 <li>commencement and THERPs date/time
 <ul class="org-ul">
@@ -490,7 +494,7 @@ still work</li>
 <p class="date">Date: \today</p>
 <p class="author">Author: Max Ferrin</p>
 <p class="email">Email: <a href="mailto:ferrinm@berkeley.edu">ferrinm@berkeley.edu</a></p>
-<p class="date">Created: 2023-04-11 Tue 13:16</p>
+<p class="date">Created: 2023-04-11 Tue 13:58</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
